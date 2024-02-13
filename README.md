@@ -1,70 +1,101 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Tutorial 3
 
-## Available Scripts
+* *Date Created*: 13 February 2024
+* *Last Modification Date*: 13 February 2024
+* *Assignment URL*: https://git.cs.dal.ca/anagpal/csci-5709-assignments/-/tree/main/Assignment1?ref_type=heads
+* *GitLab URL*: https://git.cs.dal.ca/anagpal/csci-5709-tutorials/-/tree/main/Tutorial3
+* *Github URL*: 
+* *Deployment Link*: 
 
-In the project directory, you can run:
 
-### `npm start`
+## Authors
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* [Ashish Nagpal](ashish.nagpal@dal.ca)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+To start with the project, I created a new sample react application using ```npx create-react-app .``` command. Following this I created my required components ``Profile`` and ``ProfileRegistration`` and used CSS to beautify the pages. Moreover I have installed [react-router-dom](https://www.npmjs.com/package/react-router-dom) to navigate between pages.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+1. [React](https://legacy.reactjs.org/docs/getting-started.html/) - Web framework
+2. [Npm](https://docs.npmjs.com//) - Dependency Management
+3. [Node](https://nodejs.org/docs/latest/api/) - Javascript Runtime environment
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the project repository
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Go into the project directory and install the required dependency using ```npm install``` command.
 
-### `npm run eject`
+3. Once the dependencies are installed, start the development server by ```npm start``` command.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Server will be running on port - 3000 [http://localhost:3000](http://localhost:3000). 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deployment
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The deployment is made through Netlify. 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Sources Used
 
-## Learn More
+### Code 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 1.  ProfileRegistration.js
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+*Lines 50 - 53*
 
-### Code Splitting
+```js
+      if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(formData.password)) {
+        newErrors.password = "Password should be alpha-numeric, at least 8 characters long and have atleast 1 special character ";
+      }
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The code above was created by adapting the code in [stackoverflow](https://stackoverflow.com/a/21456918) as shown below: 
 
-### Analyzing the Bundle Size
+```js
+"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- The code was used to have an understanding on regex.
 
-### Making a Progressive Web App
+- I used the code because I wanted to have a check on password that it should be 8 characters long with 1 special character and a number
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- I used the regex expression in ``if `` statement to check the password along with ``.test`` inbuilt javascript method.
 
-### Advanced Configuration
+### 2.  ProfileRegistration.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+*Lines 72 - 78*
 
-### Deployment
+```js
+navigate("/profile", {
+          state: {
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            email: formData.email,
+          },
+        });
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The code above was created by adapting the code in [dev.to](https://dev.to/raaynaldo/react-router-usehistory-uselocation-and-useparams-10cd) as shown below: 
 
-### `npm run build` fails to minify
+```js
+{
+  key: 'ac3df4', // not with HashHistory!
+  pathname: '/somewhere',
+  search: '?some=search-string',
+  hash: '#howdy',
+  state: {
+    [userDefined]: true
+  }
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The code was used by studying about different options to pass information between pages in React.
+
+- I used the code because I wanted to display the information of user in the profile page which is submitted by user on
+
+- I used the navigate method to pass the ``firstName lastName and email`` of the user to profile page.
+
+## Acknowledgments
+* I am grateful to the coding community for all of their hardwork in materials related to frontend development. The content provided served as a foundation for understanding and learning it's functionality and logic. 
