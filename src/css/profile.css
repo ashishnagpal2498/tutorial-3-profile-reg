@@ -1,0 +1,43 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.welcome-message {
+    color: #fff;
+    margin-bottom: 10px;
+    min-width: 100%;
+    background-color: #007bff;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.welcome-message p {
+    padding: 10px 20px;
+}
+
+.profile-details {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 25vh;
+    border-radius: 10px;
+    box-shadow: 0 18px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    text-align: center;
+}
+
+.profile-title {
+    color: #007bff;
+}
+
+.detail-item {
+    margin-bottom: 10px;
+}
+
+.error-message {
+    color: red;
+    padding-top: 20px;
+    margin: 0;
+}
