@@ -3,11 +3,10 @@
 
 * *Date Created*: 13 February 2024
 * *Last Modification Date*: 13 February 2024
-* *Assignment URL*: https://git.cs.dal.ca/anagpal/csci-5709-assignments/-/tree/main/Assignment1?ref_type=heads
+* *Tutorials URL*: https://git.cs.dal.ca/anagpal/csci-5709-tutorials
 * *GitLab URL*: https://git.cs.dal.ca/anagpal/csci-5709-tutorials/-/tree/main/Tutorial3
-* *Github URL*: 
-* *Deployment Link*: 
-
+* *Github URL*: https://github.com/ashishnagpal2498/tutorial-3-profile-reg
+* *Deployment Link*: https://tut-3-profile-reg.netlify.app/
 
 ## Authors
 
@@ -36,6 +35,7 @@ To start with the project, I created a new sample react application using ```npx
 ## Deployment
 
 The deployment is made through Netlify. 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d7925ac7-7968-42fd-86a8-68885baa9e02/deploy-status)](https://app.netlify.com/sites/tut-3-profile-reg/deploys)
 
 ## Sources Used
 
@@ -93,7 +93,7 @@ The code above was created by adapting the code in [dev.to](https://dev.to/raayn
 
 - The code was used by studying about different options to pass information between pages in React.
 
-- I used the code because I wanted to display the information of user in the profile page which is submitted by user on
+- I used the code because I wanted to display the information of user in the profile page which is submitted by user on Profile Registration page. Since there is no backend yet, thus the information must be pass through navigation or stored on browser locally.
 
 - I used the navigate method to pass the ``firstName lastName and email`` of the user to profile page.
 
